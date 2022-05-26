@@ -57,10 +57,23 @@
             --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
             transform: translateY(2px);
         }
-        
-        .card .text>button>a {
-            color: white;
+        /* .card .text>button>a {
+            color: white !important;
         }
+        .card .text>button>a:link {
+            color: white !important;
+        }
+        
+        .card .text>button>a:active {
+            color: white !important;
+        }
+        .card .text>button>a:visited {
+            color: white !important;
+        }
+
+        .card .text>button>a:hover {
+            color: white !important;
+        } */
         
         .card:hover {
             background: #EEEEEE;
@@ -101,7 +114,7 @@
                     <a href="tel:+{{item.phone}}">Call {{item.name}}</a><br/>
                     <a href="mailto:{{item.email}}">Email {{item.name}}</a>
                 </p>
-                <button><a href="{{item.portalURL}}"><strong>More Details</strong></a></button></strong>
+                <button><a href="{{item.portalURL}}" style="color: White"><strong>More Details</strong></a></button></strong>
             </div>
         </article>
         {% endfor %}</main>
