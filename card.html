@@ -1,0 +1,110 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <style type="text/css">
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+        
+        .card {
+            border-radius: 25px;
+            flex: 0 0 200px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+            max-width: 225px;
+        }
+        
+        .card img {
+            border-radius: 25px 25px 0px 0px;
+            max-width: 100%;
+        }
+        
+        .card .text {
+            padding: 0px 20px 20px;
+        }
+        
+        .card .text>button {
+            background: #fe5c00;
+            border: 0;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+        
+        .card .text>button:hover {
+            background: #fe5c00;
+            border: 0;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            transform: translateY(-2px);
+        }
+        
+        .card .text>button:active {
+            background: #fe5c00;
+            border: 0;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            --box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            transform: translateY(2px);
+        }
+        
+        .card .text>button>a {
+            color: white;
+        }
+        
+        .card:hover {
+            background: #EEEEEE;
+            transition: 0.3;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            z-index: 1500;
+            transform: translateY(1px);
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <main class="cards">{% for item in counselor_list %}
+        <article class="card">
+            <!-- <img alt="Pistol Pete" src="pistol_pete_counselor_1.png" width="100%" /> -->
+            <img alt="{{item.name}}" src="{{item.headshotlink}}" width="100%" />
+            <div class="text" width="95%" align="center">
+                <h2>
+                </h2>
+
+                <!-- <h3>
+                    {{item.name}}<br />
+                </h3> -->
+
+                <p>
+                    <strong>{{item.title}}</strong>
+
+                </p>
+                <p>
+
+                    <!-- <br /> {{item.territory}} <br /> 
+
+                    {{item.key}}<br />
+                    {{item.scheduleURL}}<br /> 
+                    -->
+                    <a href="tel:+{{item.phone}}">Call {{item.name}}</a><br/>
+                    <a href="mailto:{{item.email}}">Email {{item.name}}</a>
+                </p>
+                <button><a href="{{item.portalURL}}"><strong>More Details</strong></a></button></strong>
+            </div>
+        </article>
+        {% endfor %}</main>
+</body>
+
+</html>
